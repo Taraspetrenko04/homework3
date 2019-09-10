@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Table_30x30</title>
+    <style>
+        body{
+            width: 100%;
+            height: 1200px;
+        }
+        table{
+            border: 3px solid black;
+        }
+        .td-style {
+            width: 30px;
+            height: 30px;
+            border: 1px solid black;
+        }  
+        .td-black{
+            background-color: lightslategray;
+
+        }
+        .table-black td{
+            background-color: lightslategray;
+        }
+        .table-black .td-black{
+            background-color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    
+</body>
+    <script>
+        'use strict';
+        window.onload = function() {
+            let body = document.getElementsByTagName('body')[0];
+            let table = document.createElement('table');
+
+            
+            for (let i = 0; i < 10; i++){ //create table
+                let row = document.createElement('tr');
+             for (let j = 0; j < 10; j++){
+                let cell = document.createElement('td');
+                cell.classList.add('td-style')
+                row.appendChild(cell);
+                }
+                table.appendChild(row);
+            }
+            body.appendChild(table);
+
+        
+            body.addEventListener('click', function(event) {
+                let target = event.target;
+            
+
+                if (target.tagName != 'TD'){
+                    table.classList.toggle('table-black');
+
+                }else{
+                    target.classList.toggle('td-black');
+                } 
+            })
+
+    
+    
+
+
+
+
+        //     let arrTd = [...document.getElementsByTagName('TD')]; // transform html-collection to Array
+            
+
+        //     body.addEventListener('click', function(event) {
+        //     let target = event.target;
+            
+
+        //     if (target.tagName == 'TD'){
+        //         arrTd[arrTd.indexOf(target)].classList.toggle('td-black');
+
+
+        //     }else if (target.tagName != 'TABLE' && target.tagName != 'TR') {
+        //         for (let elem of arrTd){
+        //             elem.classList.toggle('td-black');
+        //         } 
+        //     }else{}
+        // });
+
+        }
+
+        
+        </script>
+</html>
